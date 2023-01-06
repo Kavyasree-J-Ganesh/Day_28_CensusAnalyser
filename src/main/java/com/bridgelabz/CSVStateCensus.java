@@ -31,7 +31,7 @@ public class CSVStateCensus {
                 System.out.println(entry);
             }
         } catch (CsvValidationException e){
-           
+
         }
 
         return stateList;
