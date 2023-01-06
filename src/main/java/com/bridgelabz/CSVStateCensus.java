@@ -12,12 +12,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CSVStateCensus {
-    static String FILE_PATH = "C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State_census.csv";
 
-    public ArrayList<String> readDataFromSource() throws IOException {
+
+    public ArrayList<String> readDataFromSource(String path) throws Exception {
         ArrayList<String> stateList = new ArrayList<>();
         try{
-            FileReader filereader = new FileReader(FILE_PATH);
+            FileReader filereader = new FileReader(path);
 
             CSVReader csvReader = new CSVReader(filereader);
             String[] nextRecord;
@@ -31,7 +31,7 @@ public class CSVStateCensus {
                 System.out.println(entry);
             }
         } catch (CsvValidationException e){
-
+            throw new FileReadException("Error in Reading file");
         }
 
         return stateList;
