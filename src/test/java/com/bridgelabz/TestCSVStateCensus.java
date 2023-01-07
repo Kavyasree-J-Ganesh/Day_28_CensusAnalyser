@@ -20,7 +20,7 @@ public class TestCSVStateCensus {
 
     // File name different
     @Test
-    public void testReadDataFromDestinationSad1(){
+    public void testReadDataFromDestinationSadWrongFile(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State.csv");
@@ -32,7 +32,7 @@ public class TestCSVStateCensus {
 
     // Incorrect file extension
     @Test
-    public void testReadDataFromDestinationSad2(){
+    public void testReadDataFromDestinationSadWrongFormat(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State.txt");
