@@ -19,7 +19,7 @@ public class TestCSVStateCensus {
     }
 
     @Test
-    public void testReadDataFromDestinationSad(){
+    public void testReadDataFromDestinationSadWrongFile(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State.csv");
