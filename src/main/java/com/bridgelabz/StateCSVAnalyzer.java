@@ -3,7 +3,7 @@ package com.bridgelabz;
 import java.util.ArrayList;
 
 public class StateCSVAnalyzer {
-    static String columnHeaderCensus = "State Population AreaInSqKm DensityPerSqKm";
+    static String columnHeaderCensus = "State" + "\t" + "Population"+ "\t" + "AreaInSqKm" + "\t" + "DensityPerSqKm" + "\t";
     public static void main(String[] args) {
          CSVStateCensus stateCensus = new CSVStateCensus();
          try{
@@ -13,4 +13,5 @@ public class StateCSVAnalyzer {
              System.out.println(e.getMessage());
          }
     }
+
 }
