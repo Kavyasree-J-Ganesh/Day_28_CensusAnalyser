@@ -21,7 +21,7 @@ public class TestCSVStateCensus {
 
     // File name different
     @Test
-    public void testReadDataFromDestinationSad1(){
+    public void testReadDataFromDestinationSadWrongFile(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State.csv", columnHeaderCensus,4);
@@ -33,7 +33,7 @@ public class TestCSVStateCensus {
 
     // Incorrect file extension
     @Test
-    public void testReadDataFromDestinationSad2(){
+    public void testReadDataFromDestinationSadWrongFormat(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State.txt", columnHeaderCensus,4);
@@ -45,7 +45,7 @@ public class TestCSVStateCensus {
 
     // Incorrect delimiter
     @Test
-    public void testReadDataFromDestinationSad3(){
+    public void testReadDataFromDestinationSadWrongDelimiter(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State_census_wrong_delimiter.csv", columnHeaderCensus, 4);
@@ -56,7 +56,7 @@ public class TestCSVStateCensus {
     }
 
     @Test
-    public void testReadDataFromDestinationSad4(){
+    public void testReadDataFromDestinationSadWrongHeader(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State_census_wrong_header.csv", columnHeaderCensus , 4);
