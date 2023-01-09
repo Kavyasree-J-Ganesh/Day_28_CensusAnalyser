@@ -18,11 +18,24 @@ public class TestCSVStateCensus {
         }
     }
 
+    // File name different
     @Test
     public void testReadDataFromDestinationSadWrongFile(){
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State.csv");
+            fail("Should throw exception");
+        } catch(Exception e){
+            Assertions.assertNotNull(e.getMessage());
+        }
+    }
+
+    // Incorrect file extension
+    @Test
+    public void testReadDataFromDestinationSadWrongFormat(){
+        csvStateCensus =  new CSVStateCensus();
+        try{
+            ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State.txt");
             fail("Should throw exception");
         } catch(Exception e){
             Assertions.assertNotNull(e.getMessage());
