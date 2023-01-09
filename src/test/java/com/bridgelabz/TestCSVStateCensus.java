@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TestCSVStateCensus {
     static CSVStateCensus csvStateCensus;
-    static String columnHeaderCensus = "State Population AreaInSqKm DensityPerSqKm";
+    static String columnHeaderCensus = "State" + "\t" + "Population"+ "\t" + "AreaInSqKm" + "\t" + "DensityPerSqKm" + "\t";
     @Test
     public void testReadDataFromDestinationHappy(){
         csvStateCensus =  new CSVStateCensus();
@@ -49,6 +49,17 @@ public class TestCSVStateCensus {
         csvStateCensus =  new CSVStateCensus();
         try{
             ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State_census_wrong_delimiter.csv", columnHeaderCensus, 4);
+            fail("Should throw exception");
+        } catch(Exception e){
+            Assertions.assertEquals(e.getMessage(), "Error in Reading file");
+        }
+    }
+
+    @Test
+    public void testReadDataFromDestinationSadWrongHeader(){
+        csvStateCensus =  new CSVStateCensus();
+        try{
+            ArrayList<String> stateList = csvStateCensus.readDataFromSource("C:\\Day_29_Census_Analyzer\\src\\main\\java\\com\\bridgelabz\\State_census_wrong_header.csv", columnHeaderCensus , 4);
             fail("Should throw exception");
         } catch(Exception e){
             Assertions.assertEquals(e.getMessage(), "Error in Reading file");

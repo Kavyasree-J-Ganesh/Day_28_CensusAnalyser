@@ -31,6 +31,12 @@ public class CSVStateCensus {
                 if( count==0 && columCount != expectedColumnCount){
                     throw new FileReadException("Error in Reading file");
                 }
+
+                if(count ==0 && !entry.equals(expectedColumnHeader)) {
+                    System.out.println(entry);
+                    System.out.println(expectedColumnHeader);
+                    throw new FileReadException("Error in Reading file");
+                }
                 stateList.add(entry);
                 System.out.println(entry);
                 count++;
